@@ -2,20 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'organica-bold';
+  src: url(/public/fonts/Organica\ Bold.otf) format('opentype');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'organica-medium';
+  src: url(/public/fonts/Organica\ Medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'organica-regular';
+  src: url(/public/fonts/Organica\ Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'organica-light';
+  src: url(/public/fonts/Organica\ Light.otf) format('opentype');
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FEFEFE;
 }
+
+.temp {
+  border: 1px solid red;
+}
+

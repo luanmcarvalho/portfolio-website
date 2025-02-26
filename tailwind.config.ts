@@ -8,9 +8,18 @@ export default {
   ],
   theme: {
     extend: {
+
+      fontFamily: {
+        organica: ['organica-medium', 'sans-serif'],
+        organicaBold: ['organica-bold', 'sans-serif'],
+        organicaLight: ['organica-light', 'sans-serif'],
+      },
+
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        black: "#1E1E1E",
+        white: "#FEFEFE",
       },
     },
   },
