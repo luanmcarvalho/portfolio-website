@@ -87,9 +87,9 @@ export default function Home () {
 
       </div>
 
-      <div className="w-full overflow-hidden" suppressHydrationWarning> {/* Added overflow-hidden here */}
-        <div className="h-20 text-black flex items-center justify-center mt-36 relative">
-          <div className="whitespace-nowrap text-[14rem] font-organicaBold animate-marquee absolute">
+      <div className="w-full overflow-hidden mt-36" suppressHydrationWarning>
+        <div className="h-[30vh] text-black flex items-center justify-center relative">
+          <div className="marquee-text whitespace-nowrap font-organicaBold absolute">
             ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS •
           </div>
         </div>

@@ -39,6 +39,8 @@ body {
   }
 }
 
-.animate-marquee {
+.marquee-text {
+  font-size: clamp(6rem, 14vw, 14rem);
   animation: marquee 667s linear infinite;
+  will-change: transform;
 }
