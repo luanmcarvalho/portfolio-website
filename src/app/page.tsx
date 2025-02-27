@@ -1,6 +1,5 @@
 "use client";
 
-import Head from 'next/head';
 import { FaLinkedin, FaVimeo, FaGithub, } from 'react-icons/fa';
 import Img from 'next/image';
 import { useState } from 'react';
@@ -25,13 +24,16 @@ export default function home () {
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
 
+  const scrollToSection = (id, offset = 200) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const topPosition = section.offsetTop - offset;
+      window.scrollTo({ top: topPosition, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-      <Head>
-        <title>Luan Carvalho Portfolio</title>
-        <meta name="description" content="frontend Developer | Motion Designer" />
-      </Head>
-
       {/* Nav Bar Start */}
       <div className='fixed top-0 left-0 w-full bg-white bg-opacity-50 backdrop-blur-md p-6 z-50'>
         <div className='flex items-center h-24 px-14'>
@@ -43,10 +45,10 @@ export default function home () {
 
           {/* Menu Central */}
           <div className='flex flex-1 justify-center space-x-6'>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105'>Animation</p>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105'>Development</p>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105'>About</p>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105'>Contact</p>
+            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("animation")}>Animation</p>
+            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("dev")}>Development</p>
+            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("about")}>About</p>
+            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("contact")}>Contact</p>
           </div>
 
           {/* Redes Sociais */}
@@ -81,10 +83,12 @@ export default function home () {
           ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS •
         </div>
 
+      <div className='section-marker'></div>
+
       </div>
 
       {/* Projects Section */}
-      <div className="relative mt-60">
+      <div className="relative mt-60" id='animation'>
 
       {/* Seção que sobe */}
       <div className="z-40">
@@ -122,67 +126,119 @@ export default function home () {
             )
           )}
         </div>
+      </div>
 
-        <div className='mt-60'>
-          <h2 className="text-6xl font-organica text-center">Web Development</h2>
-        </div>
+      {/* Development Section */}
 
-        {/* Seção de Sites Criados */}
-        <div className="relative mt-10">
-          <h3 className="text-4xl font-organica text-center mb-8">Live Sites</h3>
+      <div className='mt-60' id='dev'>
+        <h2 className="text-6xl font-organica text-center">Web Development</h2>
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
-            {/* Exemplo de Site 1 */}
-            <div className="relative group cursor-pointer">
-              <a href="https://example1.com" target="_blank" className="block">
-                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
-                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 1</h2>
-                <Img src="/images/wizard-thumb.jpg" alt="Website 1" width={800} height={453} className="w-full h-auto shadow-lg" />
-              </a>
-            </div>
+      {/* Seção de Sites Criados */}
+      <div className="relative mt-10">
+        <h3 className="text-4xl font-organica text-center mb-8">Live Sites</h3>
 
-            {/* Exemplo de Site 2 */}
-            <div className="relative group cursor-pointer">
-              <a href="https://example2.com" target="_blank" className="block">
-                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
-                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 2</h2>
-                <Img src="/images/wizard-thumb.jpg" alt="Website 2" width={800} height={453} className="w-full h-auto shadow-lg" />
-              </a>
-            </div>
-
-            {/* Exemplo de Site 3 */}
-            <div className="relative group cursor-pointer">
-              <a href="https://example3.com" target="_blank" className="block">
-                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
-                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 3</h2>
-                <Img src="/images/wizard-thumb.jpg" alt="Website 3" width={800} height={453} className="w-full h-auto shadow-lg" />
-              </a>
-            </div>
-
-            {/* Você pode adicionar mais sites aqui */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
+          {/* Exemplo de Site 1 */}
+          <div className="relative group cursor-pointer">
+            <a href="https://example1.com" target="_blank" className="block">
+              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
+              <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 1</h2>
+              <Img src="/images/wizard-thumb.jpg" alt="Website 1" width={800} height={453} className="w-full h-auto shadow-lg" />
+            </a>
           </div>
+
+          {/* Exemplo de Site 2 */}
+          <div className="relative group cursor-pointer">
+            <a href="https://example2.com" target="_blank" className="block">
+              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
+              <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 2</h2>
+              <Img src="/images/wizard-thumb.jpg" alt="Website 2" width={800} height={453} className="w-full h-auto shadow-lg" />
+            </a>
+          </div>
+
+          {/* Exemplo de Site 3 */}
+          <div className="relative group cursor-pointer">
+            <a href="https://example3.com" target="_blank" className="block">
+              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
+              <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 3</h2>
+              <Img src="/images/wizard-thumb.jpg" alt="Website 3" width={800} height={453} className="w-full h-auto shadow-lg" />
+            </a>
+          </div>
+
+          {/* Você pode adicionar mais sites aqui */}
+        </div>
+      </div>
+
+      {/* About Section */}
+
+
+      <div className='mt-60 mb-10' id='about'>
+        <h2 className="text-6xl font-organica text-center">About</h2>
+      </div>
+
+      <div className='container mx-auto mt-10 flex'>
+        <div className='flex-1 flex-col space-y-4 mr-5'>
+          <h2 className='font-organica text-6xl'>Hi!</h2>
+          <p className='font-organicaLight text-2xl'>I’m a Senior Motion Designer passionate about crafting visually stunning and emotionally engaging animations.</p>
+          <p className='font-organicaLight text-2xl'>With 7 years of experience working alongside talented people, I bring ideas to life through animation and precise execution. From concept to delivery, I aim to captivate audiences and elevate brand messaging with exceptional audiovisual pieces.</p>
+          <p className='font-organicaLight text-2xl'>When I’m not designing or learning something new, you’ll find me enjoying movies, exploring immersive video games, or spending quality time with wife and my baby daughter—my greatest source of inspiration.</p>
+          <p className='font-organicaLight text-2xl'>I also run a boutique animation and tech studio, where I collaborate with top industry professionals to create innovative solutions for your business. Explore our work at <a href="www.hoverstudio.tv" className='underlined'>hoverstudio.tv</a></p>
+        </div>
+        <div className='flex-1 w-[800px]'>
+          <Img src="/images/about-image.png" alt='' width={800} height={800} />
         </div>
 
       </div>
 
-      {/* Footer */}
-      <div className='bg-footer h-96 mt-28'>
-        <div className='flex items-center h-full'>
-          <div className='flex-1 ml-20'>
-            <Img src='/images/HOVER-ColorDARK.png' alt='Logo' width={250} height={250} className=''/>
-          </div>
-          <div className='flex-1 justify-center space-y-2'>
-            <p className='font-organicaLight'><a href="mailto:hello@hoverstudio.tv" className='hover:underline'>hello@hoverstudio.tv</a></p>
-            <p className='font-organicaLight'>(11) 93258-9315</p>
+      <div>
+        <div className='mt-60 mb-10' id='contact'>
+          <h2 className="text-6xl font-organica text-center">Contact</h2>
+        </div>
+        <div className='container mx-auto mt-10 gap-10'>
+          <div className='bg-white p-10 rounded-2xl shadow-lg'>
+            <h3 className='text-4xl font-organica mb-6'>Let's Talk</h3>
+            <form action="https://formspree.io/f/xovjgagl" method="POST" className='space-y-4'>
+              <input type='text' name='name' placeholder='Your Name' className='w-full p-4 border rounded-xl' required />
+              <input type='email' name='email' placeholder='Your Email' className='w-full p-4 border rounded-xl' required />
+              <textarea name='message' placeholder='Your Message' rows='5' className='w-full p-4 border rounded-xl' required></textarea>
+              <button type='submit' className='w-full p-4 bg-black text-white rounded-xl text-2xl hover:opacity-80 transition-all duration-300'>Send Message</button>
+            </form>
           </div>
 
-          <div className='flex flex-col space-x-4 mr-20'>
+        </div>
+
+
+      </div>
+
+      {/* Footer */}
+      <div className='bg-footer h-48 mt-28'>
+        <div className='flex items-center h-full mx-20'>
+
+          <div className='flex-1 justify-center space-y-2'>
+            <p className='font-organicaLight'><a href="mailto:hello@luanmcarvalho.com" className='hover:underline'>hello@luanmcarvalho.com</a></p>
+            <p className='font-organicaLight'>+55 (11) 93258-9315</p>
+          </div>
+
+          <div className='flex-1 flex-col'>
             <p className='font-organicaLight text-1xl'>Av. Gov. José Malcher, 153</p>
-            <p className='font-organicaLight text-1xl'>Nazaré, Belém - PA</p>
+            <p className='font-organicaLight text-1xl'>Nazaré, Belém - PA. Brazil.</p>
             <p className='font-organicaLight text-1xl'>66035-100</p>
           </div>
 
+          <div className='flex-1'>
+            <div className='flex flex-1 space-x-6'>
+              <a href="https://www.linkedin.com/in/luanmcarvalho/" target='_blank' className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaLinkedin /></a>
+              <a href="https://vimeo.com/hoverstudio" target='_blank' className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaVimeo /></a>
+              <a href="https://github.com/luanmcarvalho" target='_blank' className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaGithub /></a>
+            </div>
+
           </div>
+            <div>
+              <p className='font-organicaLight'> © 2025 Luan Carvalho</p>
+            </div>
+          </div>
+
       </div>
     </>
   );
