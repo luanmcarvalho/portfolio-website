@@ -54,8 +54,18 @@ export default function Home () {
 
           {/* Menu Central */}
           <div className='flex flex-1 justify-center space-x-6'>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("animation")}>Animation</p>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("dev")}>Development</p>
+            <p 
+              className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' 
+              onClick={() => isClient && scrollToSection("animation")}
+            >
+              Animation
+            </p>
+            <p 
+              className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' 
+              onClick={() => isClient && scrollToSection("dev")}
+            >
+              Development
+            </p>
             <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("about")}>About</p>
             <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("contact")}>Contact</p>
           </div>
@@ -89,8 +99,13 @@ export default function Home () {
 
       <div className="w-full overflow-hidden mt-36" suppressHydrationWarning>
         <div className="h-[30vh] text-black flex items-center justify-center relative">
-          <div className="marquee-text whitespace-nowrap font-organicaBold absolute">
-            ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS •
+          <div className="marquee-track absolute whitespace-nowrap">
+            <span className="text-[14rem] font-organicaBold inline-block">
+              ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS •&nbsp;
+            </span>
+            <span className="text-[14rem] font-organicaBold inline-block">
+              ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS •&nbsp;
+            </span>
           </div>
         </div>
       </div>

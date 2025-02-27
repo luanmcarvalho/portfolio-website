@@ -35,7 +35,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
@@ -43,4 +43,32 @@ body {
   font-size: clamp(6rem, 14vw, 14rem);
   animation: marquee 667s linear infinite;
   will-change: transform;
+}
+
+.marquee-container {
+  height: 30vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: flex;
+  width: 50%; /* Each content div is half of the track */
+  font-size: clamp(4rem, 14vw, 14rem); /* Responsive font size */
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion) {
+  .marquee-track {
+    animation-play-state: paused;
+  }
 }
