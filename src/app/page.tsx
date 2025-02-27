@@ -68,21 +68,21 @@ export default function Home () {
 
           {/* Menu Central */}
           <div className='flex flex-1 justify-center space-x-6'>
-            <p 
-              className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' 
+            <p
+              className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105'
               onClick={() => isClient && scrollToSection("animation")}
             >
               Animation
             </p>
-            <p 
-              className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' 
+            <p
+              className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105'
               onClick={() => isClient && scrollToSection("dev")}
             >
               Development
             </p>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' 
+            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105'
                onClick={() => isClient && scrollToSection("about")}>About</p>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' 
+            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105'
                onClick={() => isClient && scrollToSection("contact")}>Contact</p>
           </div>
 
@@ -147,8 +147,8 @@ export default function Home () {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-20 py-20">
             {displayedProjects.map((project) => (
-              <div 
-                key={project.id} 
+              <div
+                key={project.id}
                 className="relative group cursor-pointer w-full"
                 onClick={() => {
                   setVideoUrl(project.videoUrl);
@@ -157,7 +157,7 @@ export default function Home () {
               >
                 <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
                 <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">{project.title}</h2>
-                
+
                 {/* Add play button icon */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-8 text-white text-xl opacity-0 mt-8 group-hover:opacity-100 transition-opacity duration-300 z-20">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -165,7 +165,7 @@ export default function Home () {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                
+
                 <Image src={project.img} alt={project.title} width={800} height={453} className="w-full h-auto shadow-lg" />
               </div>
             ))}
