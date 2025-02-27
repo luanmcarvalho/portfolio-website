@@ -2,12 +2,13 @@
 
 import { FaLinkedin, FaVimeo, FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 
 export default function Home () {
   const [filter, setFilter] = useState('All');
   const [showAll, setShowAll] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   const projects = [
     { id: 1, title: 'BMW | Alexa', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
@@ -19,19 +20,26 @@ export default function Home () {
     { id: 7, title: 'Density | Go to Market', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
     { id: 8, title: 'Parque com Criatividade', category: 'Compositing', img: '/images/wizard-thumb.jpg' },
     { id: 9, title: 'Skol | Sinuquinha x Snooker', category: 'Compositing', img: '/images/wizard-thumb.jpg' },
-
   ];
 
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
 
-  const scrollToSection = (id, offset = 200) => {
-    const section = document.getElementById(id);
-    if (section) {
-      const topPosition = section.offsetTop - offset;
-      window.scrollTo({ top: topPosition, behavior: 'smooth' });
+  // Safe scroll function with useCallback
+  const scrollToSection = useCallback((id, offset = 200) => {
+    if (typeof window !== 'undefined') {
+      const section = document.getElementById(id);
+      if (section) {
+        const topPosition = section.offsetTop - offset;
+        window.scrollTo({ top: topPosition, behavior: 'smooth' });
+      }
     }
-  };
+  }, []);
+
+  // Set isClient to true on mount
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <>
@@ -79,9 +87,11 @@ export default function Home () {
 
       </div>
 
-      <div className="w-full h-20 text-black flex items-center justify-center mt-36">
-        <div className="whitespace-nowrap text-[14rem] font-organicaBold animate-marquee">
-          ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS •
+      <div className="w-full overflow-hidden" suppressHydrationWarning> {/* Added overflow-hidden here */}
+        <div className="h-20 text-black flex items-center justify-center mt-36 relative">
+          <div className="whitespace-nowrap text-[14rem] font-organicaBold animate-marquee absolute">
+            ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS •
+          </div>
         </div>
       </div>
 
@@ -139,7 +149,7 @@ export default function Home () {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
           {/* Exemplo de Site 1 */}
           <div className="relative group cursor-pointer">
-            <a href="https://example1.com" target="_blank" className="block">
+            <a href="https://example1.com" target="_blank" rel="noopener noreferrer" className="block">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
               <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 1</h2>
               <Image src="/images/wizard-thumb.jpg" alt="Website 1" width={800} height={453} className="w-full h-auto shadow-lg" />
@@ -148,7 +158,7 @@ export default function Home () {
 
           {/* Exemplo de Site 2 */}
           <div className="relative group cursor-pointer">
-            <a href="https://example2.com" target="_blank" className="block">
+            <a href="https://example2.com" target="_blank" rel="noopener noreferrer" className="block">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
               <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 2</h2>
               <Image src="/images/wizard-thumb.jpg" alt="Website 2" width={800} height={453} className="w-full h-auto shadow-lg" />
@@ -157,7 +167,7 @@ export default function Home () {
 
           {/* Exemplo de Site 3 */}
           <div className="relative group cursor-pointer">
-            <a href="https://example3.com" target="_blank" className="block">
+            <a href="https://example3.com" target="_blank" rel="noopener noreferrer" className="block">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
               <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 3</h2>
               <Image src="/images/wizard-thumb.jpg" alt="Website 3" width={800} height={453} className="w-full h-auto shadow-lg" />
@@ -168,24 +178,30 @@ export default function Home () {
         </div>
       </div>
 
-      {/* About Section */}
-
-
-      <div className='mt-60 mb-10' id='about'>
-        <h2 className="text-6xl font-organica text-center">About</h2>
+      <div className='mt-20'>
       </div>
 
-      <div className='container mx-auto mt-10 flex'>
-        <div className='flex-1 flex-col space-y-4 mr-5'>
-          <h2 className='font-organica text-6xl'>Hi!</h2>
-          <p className='font-organicaLight text-2xl'>I’m a Front-End Developer and Motion Designer with a passion for crafting visually stunning, interactive experiences. I bring a unique blend of technical expertise and creativity to every project. My experience spans 7 years, during which I've worked alongside talented professionals to bring ideas to life, blending beautiful, functional design with seamless animation.</p>
-          <p className='font-organicaLight text-2xl'>From concept to delivery, I aim to captivate audiences and elevate brand messaging with exceptional audiovisual pieces. Utilizing modern technologies such as React, Next.js, and CSS animations to deliver exceptional user experiences.</p>
-          <p className='font-organicaLight text-2xl'>When I’m not designing or learning something new, you’ll find me enjoying movies, exploring video games, or spending quality time with wife and my baby daughter, my greatest source of inspiration.</p>
-          <p className='font-organicaLight text-2xl'>I also run a boutique animation and tech studio, where I collaborate with top industry professionals to create innovative solutions for your business. Explore our work at <a href="https://www.hoverstudio.tv/" className='underlined'>hoverstudio.tv</a></p>
+      {/* About Section */}
+
+      <div className='container mx-auto mt-10 flex flex-col lg:flex-row'>
+        <div className='flex-1 flex-col space-y-4 lg:mr-5 mb-10 lg:mb-0' id='about'>
+          <h2 className="text-6xl font-organica text-center mt-36">About</h2>
+
+          <div className='container mx-auto mt-30 flex'>
+            <div className='flex-1 flex-col space-y-4 mr-5'>
+            <h2 className='font-organica text-6xl items-center'>Hi!</h2>
+            <p className='font-organicaLight text-2xl'>I’m a Front-End Developer and Motion Designer with a passion for crafting visually stunning, interactive experiences. I bring a unique blend of technical expertise and creativity to every project. My experience spans 7 years, during which I've worked alongside talented professionals to bring ideas to life, blending beautiful, functional design with seamless animation.</p>
+            <p className='font-organicaLight text-2xl'>From concept to delivery, I aim to captivate audiences and elevate brand messaging with exceptional audiovisual pieces. Utilizing modern technologies such as React, Next.js, and CSS animations to deliver exceptional user experiences.</p>
+            <p className='font-organicaLight text-2xl'>When I’m not designing or learning something new, you’ll find me enjoying movies, exploring video games, or spending quality time with wife and my baby daughter, my greatest source of inspiration.</p>
+            <p className='font-organicaLight text-2xl'>I also run a boutique animation and tech studio, where I collaborate with top industry professionals to create innovative solutions for your business. Explore our work at <a href="https://www.hoverstudio.tv/" className='underlined'>hoverstudio.tv</a></p>
+            </div>
+          </div>
         </div>
-        <div className='flex-1 w-[800px]'>
+
+        <div className='flex-1 w-full lg:w-[800px] mt-36 hidden sm:block'>
           <Image src="/images/about-image.png" alt='Banner' width={800} height={800} />
         </div>
+
 
       </div>
 
@@ -232,10 +248,10 @@ export default function Home () {
             </div>
 
           </div>
-            <div>
-              <p className='font-organicaLight'> © 2025 Luan Carvalho</p>
-            </div>
+          <div>
+            <p className='font-organicaLight' suppressHydrationWarning> © {new Date().getFullYear()} Luan Carvalho</p>
           </div>
+        </div>
 
       </div>
     </>
