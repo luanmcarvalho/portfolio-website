@@ -20,6 +20,7 @@ export default {
         foreground: "var(--foreground)",
         black: "#1E1E1E",
         white: "#FEFEFE",
+        footer: "#D8D1C6",
       },
     },
   },

@@ -7,15 +7,23 @@ import { useState } from 'react';
 
 export default function home () {
   const [filter, setFilter] = useState('All');
+  const [showAll, setShowAll] = useState(false);
 
   const projects = [
     { id: 1, title: 'BMW | Alexa', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
-    { id: 2, title: 'Pringles | New Visual', category: 'Development', img: '/images/wizard-thumb.jpg' },
-    { id: 3, title: 'Cinema Olympia | Requalificação', category: 'Animation', img: '/images/wizard-thumb.jpg' },
-    { id: 4, title: 'Vale | Stories We Can Avoid', category: 'Development', img: '/images/wizard-thumb.jpg' },
+    { id: 2, title: 'Pringles | New Visual', category: '3D Animation', img: '/images/wizard-thumb.jpg' },
+    { id: 3, title: 'Cinema Olympia | Requalificação', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
+    { id: 4, title: 'Vale | Stories We Can Avoid', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
+    { id: 5, title: 'Papo de Raiz', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
+    { id: 6, title: 'Vale | Serra Sul', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
+    { id: 7, title: 'Density | Go to Market', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
+    { id: 8, title: 'Parque com Criatividade', category: 'Compositing', img: '/images/wizard-thumb.jpg' },
+    { id: 9, title: 'Skol | Sinuquinha x Snooker', category: 'Compositing', img: '/images/wizard-thumb.jpg' },
+
   ];
 
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
 
   return (
     <>
@@ -83,7 +91,7 @@ export default function home () {
         <h2 className="text-6xl font-organica text-center">Animation</h2>
 
       <div className='flex justify-center mt-10 space-x-10'>
-      {['All', '2D Animation', '3D Animation', 'Compositing', 'Design'].map(category => (
+      {['All', '2D Animation', '3D Animation', 'Compositing'].map(category => (
         <button
           key={category}
           className={`text-2xl font-organica cursor-pointer transition-all duration-300 ${filter === category ? 'text-black underline' : 'text-gray-500 hover:text-black hover:scale-105'}`}
@@ -93,16 +101,86 @@ export default function home () {
       </div>
       </div>
 
-      {/* Lista de Projetos */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-20 py-20">
-        {filteredProjects.map((project) => (
-          <div key={project.id} className="relative group cursor-pointer w-full">
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
-            <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">{project.title}</h2>
-            <Img src={project.img} alt={project.title} width={800} height={453} className="w-full h-auto shadow-lg" />
+        {/* Exibição dos Projetos Filtrados */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-20 py-20">
+          {displayedProjects.map((project) => (
+            <div key={project.id} className="relative group cursor-pointer w-full">
+              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
+              <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">{project.title}</h2>
+              <Img src={project.img} alt={project.title} width={800} height={453} className="w-full h-auto shadow-lg" />
+            </div>
+          ))}
+        </div>
+
+        {/* Botão para Mostrar Mais ou Mostrar Menos */}
+        <div className="flex justify-center">
+          {showAll ? (
+            <button onClick={() => setShowAll(false)} className="text-2xl font-organica text-gray-500 hover:text-black hover:scale-105 transition-all duration-300">Mostrar Menos</button>
+          ) : (
+            filteredProjects.length > 4 && (
+              <button onClick={() => setShowAll(true)} className="text-2xl font-organica text-gray-500 hover:text-black hover:scale-105 transition-all duration-300">Mostrar Mais</button>
+            )
+          )}
+        </div>
+
+        <div className='mt-60'>
+          <h2 className="text-6xl font-organica text-center">Web Development</h2>
+        </div>
+
+        {/* Seção de Sites Criados */}
+        <div className="relative mt-10">
+          <h3 className="text-4xl font-organica text-center mb-8">Live Sites</h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
+            {/* Exemplo de Site 1 */}
+            <div className="relative group cursor-pointer">
+              <a href="https://example1.com" target="_blank" className="block">
+                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
+                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 1</h2>
+                <Img src="/images/wizard-thumb.jpg" alt="Website 1" width={800} height={453} className="w-full h-auto shadow-lg" />
+              </a>
+            </div>
+
+            {/* Exemplo de Site 2 */}
+            <div className="relative group cursor-pointer">
+              <a href="https://example2.com" target="_blank" className="block">
+                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
+                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 2</h2>
+                <Img src="/images/wizard-thumb.jpg" alt="Website 2" width={800} height={453} className="w-full h-auto shadow-lg" />
+              </a>
+            </div>
+
+            {/* Exemplo de Site 3 */}
+            <div className="relative group cursor-pointer">
+              <a href="https://example3.com" target="_blank" className="block">
+                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
+                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 3</h2>
+                <Img src="/images/wizard-thumb.jpg" alt="Website 3" width={800} height={453} className="w-full h-auto shadow-lg" />
+              </a>
+            </div>
+
+            {/* Você pode adicionar mais sites aqui */}
           </div>
-        ))}
+        </div>
+
       </div>
+
+      {/* Footer */}
+      <div className='bg-footer h-96 mt-28'>
+        <div className='flex items-center h-full'>
+          <div className='flex-1 ml-20'>
+            <Img src='/images/HOVER-ColorDARK.png' alt='Logo' width={250} height={250} className=''/>
+          </div>
+          <div className='flex-1 justify-center flex-col space-y-2 mr-[80rem]'>
+            <p className='font-organicaLight'><a href="mailto:hello@hoverstudio.tv" className='hover:underline'>hello@hoverstudio.tv</a></p>
+            <p className='font-organicaLight'>(11) 93258-9315</p>
+            <p className='font-organicaLight text-1xl'>Av. Gov. José Malcher, 153</p>
+            <p className='font-organicaLight text-1xl'>Nazaré, Belém - PA</p>
+            <p className='font-organicaLight text-1xl'>66035-100</p>
+          </div>
+
+        </div>
+
       </div>
     </>
   );
