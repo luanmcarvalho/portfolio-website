@@ -25,7 +25,7 @@ export default function Home () {
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
 
-  // Safe scroll function with useCallback
+
   const scrollToSection = useCallback((id, offset = 200) => {
     if (typeof window !== 'undefined') {
       const section = document.getElementById(id);
@@ -36,7 +36,7 @@ export default function Home () {
     }
   }, []);
 
-  // Set isClient to true on mount
+
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -83,7 +83,7 @@ export default function Home () {
        {/* Hero */}
       <div className='flex mt-60 px-36 div-img'>
         <div className='flex-2 flex-col space-y-1'>
-          <p className='text-4xl ml-1 font-organica'>Hi, I'm</p>
+          <p className='text-4xl ml-1 font-organica'>Hi, I&apos;m</p>
           <h2 className='text-6xl font-organica'>Luan Carvalho.</h2>
           <h2 className='text-2xl ml-1 font-organicaLight'>Frontend Developer & Motion Designer</h2>
         </div>
@@ -205,9 +205,9 @@ export default function Home () {
           <div className='container mx-auto mt-30 flex'>
             <div className='flex-1 flex-col space-y-4 mr-5'>
             <h2 className='font-organica text-6xl items-center'>Hi!</h2>
-            <p className='font-organicaLight text-2xl'>I’m a Front-End Developer and Motion Designer with a passion for crafting visually stunning, interactive experiences. I bring a unique blend of technical expertise and creativity to every project. My experience spans 7 years, during which I've worked alongside talented professionals to bring ideas to life, blending beautiful, functional design with seamless animation.</p>
+            <p className='font-organicaLight text-2xl'>I&apos;m a Front-End Developer and Motion Designer with a passion for crafting visually stunning, interactive experiences. I bring a unique blend of technical expertise and creativity to every project. My experience spans 7 years, during which I&apos;ve worked alongside talented professionals to bring ideas to life, blending beautiful, functional design with seamless animation.</p>
             <p className='font-organicaLight text-2xl'>From concept to delivery, I aim to captivate audiences and elevate brand messaging with exceptional audiovisual pieces. Utilizing modern technologies such as React, Next.js, and CSS animations to deliver exceptional user experiences.</p>
-            <p className='font-organicaLight text-2xl'>When I’m not designing or learning something new, you’ll find me enjoying movies, exploring video games, or spending quality time with wife and my baby daughter, my greatest source of inspiration.</p>
+            <p className='font-organicaLight text-2xl'>When I&apos;m not designing or learning something new, you&apos;ll find me enjoying movies, exploring video games, or spending quality time with wife and my baby daughter, my greatest source of inspiration.</p>
             <p className='font-organicaLight text-2xl'>I also run a boutique animation and tech studio, where I collaborate with top industry professionals to create innovative solutions for your business. Explore our work at <a href="https://www.hoverstudio.tv/" className='underlined'>hoverstudio.tv</a></p>
             </div>
           </div>
@@ -226,7 +226,7 @@ export default function Home () {
         </div>
         <div className='container mx-auto mt-10 gap-10'>
           <div className='bg-white p-10 rounded-2xl shadow-lg'>
-            <h3 className='text-4xl font-organica mb-6'>Let's Talk</h3>
+            <h3 className='text-4xl font-organica mb-6'>Let&apos;s Talk</h3>
             <form action="https://formspree.io/f/xovjgagl" method="POST" className='space-y-4'>
               <input type='text' name='name' placeholder='Your Name' className='w-full p-4 border rounded-xl' required />
               <input type='email' name='email' placeholder='Your Email' className='w-full p-4 border rounded-xl' required />
