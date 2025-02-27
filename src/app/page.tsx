@@ -1,10 +1,11 @@
 "use client";
 
-import { FaLinkedin, FaVimeo, FaGithub, } from 'react-icons/fa';
-import Img from 'next/image';
-import { useState } from 'react';
+import { FaLinkedin, FaVimeo, FaGithub } from 'react-icons/fa';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
-export default function home () {
+
+export default function Home () {
   const [filter, setFilter] = useState('All');
   const [showAll, setShowAll] = useState(false);
 
@@ -40,7 +41,7 @@ export default function home () {
 
           {/* Logo */}
           <div className='flex-1 h-24'>
-            <Img src='/images/HoverIcon2.png' alt='Logo' width={70} height={70} />
+            <Image src='/images/HoverIcon2.png' alt='Logo' width={70} height={70} />
           </div>
 
           {/* Menu Central */}
@@ -53,9 +54,9 @@ export default function home () {
 
           {/* Redes Sociais */}
           <div className='flex flex-1 justify-end space-x-6'>
-            <a href="https://www.linkedin.com/in/luanmcarvalho/" target='_blank' className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaLinkedin /></a>
-            <a href="https://vimeo.com/hoverstudio" target='_blank' className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaVimeo /></a>
-            <a href="https://github.com/luanmcarvalho" target='_blank' className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/luanmcarvalho/" target='_blank' rel="noopener noreferrer" className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaLinkedin /></a>
+            <a href="https://vimeo.com/hoverstudio" target='_blank' rel="noopener noreferrer" className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaVimeo /></a>
+            <a href="https://github.com/luanmcarvalho" target='_blank' rel="noopener noreferrer" className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaGithub /></a>
           </div>
         {/* Navbar end */}
         </div>
@@ -73,7 +74,7 @@ export default function home () {
           <div className='absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 z-10 transition-opacity duration-300' />
           <h2 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica'>Wizard's New Brand</h2>
           <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xl opacity-0 mt-8 group-hover:opacity-100 transition-opacity duration-300 z-10 font-organicaLight'>Featured Project</p>
-          <Img src='/images/wizard-thumb.jpg' alt='Featured Project' width={800} height={800} className='w-full h-auto'/>
+          <Image src='/images/wizard-thumb.jpg' alt='Featured Project' width={800} height={800} className='w-full h-auto' priority/>
         </div>
 
       </div>
@@ -82,9 +83,6 @@ export default function home () {
         <div className="whitespace-nowrap text-[14rem] font-organicaBold animate-marquee">
           ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS • ANIMATION • DEVELOPMENT • DESIGN • MOTION • FRONTEND • BACKEND • MOBILE • 3D MODELS • REACT • NEXT JS •
         </div>
-
-      <div className='section-marker'></div>
-
       </div>
 
       {/* Projects Section */}
@@ -111,7 +109,7 @@ export default function home () {
             <div key={project.id} className="relative group cursor-pointer w-full">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
               <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">{project.title}</h2>
-              <Img src={project.img} alt={project.title} width={800} height={453} className="w-full h-auto shadow-lg" />
+              <Image src={project.img} alt={project.title} width={800} height={453} className="w-full h-auto shadow-lg" />
             </div>
           ))}
         </div>
@@ -144,7 +142,7 @@ export default function home () {
             <a href="https://example1.com" target="_blank" className="block">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
               <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 1</h2>
-              <Img src="/images/wizard-thumb.jpg" alt="Website 1" width={800} height={453} className="w-full h-auto shadow-lg" />
+              <Image src="/images/wizard-thumb.jpg" alt="Website 1" width={800} height={453} className="w-full h-auto shadow-lg" />
             </a>
           </div>
 
@@ -153,7 +151,7 @@ export default function home () {
             <a href="https://example2.com" target="_blank" className="block">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
               <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 2</h2>
-              <Img src="/images/wizard-thumb.jpg" alt="Website 2" width={800} height={453} className="w-full h-auto shadow-lg" />
+              <Image src="/images/wizard-thumb.jpg" alt="Website 2" width={800} height={453} className="w-full h-auto shadow-lg" />
             </a>
           </div>
 
@@ -162,7 +160,7 @@ export default function home () {
             <a href="https://example3.com" target="_blank" className="block">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
               <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 3</h2>
-              <Img src="/images/wizard-thumb.jpg" alt="Website 3" width={800} height={453} className="w-full h-auto shadow-lg" />
+              <Image src="/images/wizard-thumb.jpg" alt="Website 3" width={800} height={453} className="w-full h-auto shadow-lg" />
             </a>
           </div>
 
@@ -180,13 +178,13 @@ export default function home () {
       <div className='container mx-auto mt-10 flex'>
         <div className='flex-1 flex-col space-y-4 mr-5'>
           <h2 className='font-organica text-6xl'>Hi!</h2>
-          <p className='font-organicaLight text-2xl'>I’m a Senior Motion Designer passionate about crafting visually stunning and emotionally engaging animations.</p>
-          <p className='font-organicaLight text-2xl'>With 7 years of experience working alongside talented people, I bring ideas to life through animation and precise execution. From concept to delivery, I aim to captivate audiences and elevate brand messaging with exceptional audiovisual pieces.</p>
-          <p className='font-organicaLight text-2xl'>When I’m not designing or learning something new, you’ll find me enjoying movies, exploring immersive video games, or spending quality time with wife and my baby daughter—my greatest source of inspiration.</p>
-          <p className='font-organicaLight text-2xl'>I also run a boutique animation and tech studio, where I collaborate with top industry professionals to create innovative solutions for your business. Explore our work at <a href="www.hoverstudio.tv" className='underlined'>hoverstudio.tv</a></p>
+          <p className='font-organicaLight text-2xl'>I’m a Front-End Developer and Motion Designer with a passion for crafting visually stunning, interactive experiences. I bring a unique blend of technical expertise and creativity to every project. My experience spans 7 years, during which I've worked alongside talented professionals to bring ideas to life, blending beautiful, functional design with seamless animation.</p>
+          <p className='font-organicaLight text-2xl'>From concept to delivery, I aim to captivate audiences and elevate brand messaging with exceptional audiovisual pieces. Utilizing modern technologies such as React, Next.js, and CSS animations to deliver exceptional user experiences.</p>
+          <p className='font-organicaLight text-2xl'>When I’m not designing or learning something new, you’ll find me enjoying movies, exploring video games, or spending quality time with wife and my baby daughter, my greatest source of inspiration.</p>
+          <p className='font-organicaLight text-2xl'>I also run a boutique animation and tech studio, where I collaborate with top industry professionals to create innovative solutions for your business. Explore our work at <a href="https://www.hoverstudio.tv/" className='underlined'>hoverstudio.tv</a></p>
         </div>
         <div className='flex-1 w-[800px]'>
-          <Img src="/images/about-image.png" alt='' width={800} height={800} />
+          <Image src="/images/about-image.png" alt='Banner' width={800} height={800} />
         </div>
 
       </div>
@@ -228,9 +226,9 @@ export default function home () {
 
           <div className='flex-1'>
             <div className='flex flex-1 space-x-6'>
-              <a href="https://www.linkedin.com/in/luanmcarvalho/" target='_blank' className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaLinkedin /></a>
-              <a href="https://vimeo.com/hoverstudio" target='_blank' className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaVimeo /></a>
-              <a href="https://github.com/luanmcarvalho" target='_blank' className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/luanmcarvalho/" target='_blank' rel="noopener noreferrer" className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaLinkedin /></a>
+              <a href="https://vimeo.com/hoverstudio" target='_blank' rel="noopener noreferrer" className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaVimeo /></a>
+              <a href="https://github.com/luanmcarvalho" target='_blank' rel="noopener noreferrer" className='cursor-pointer text-gray-600 text-3xl hover:text-black hover:scale-110 transition-all duration-300'><FaGithub /></a>
             </div>
 
           </div>

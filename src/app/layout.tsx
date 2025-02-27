@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Luan Carvalho Portfolio",
   description: "Frontend Developer and Motion Designer",
+  other: {
+    "grammarly-disable-extension": "true"
+  }
 };
 
 export default function RootLayout({
