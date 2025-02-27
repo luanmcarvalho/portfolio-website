@@ -26,7 +26,7 @@ export default function Home () {
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
 
 
-  const scrollToSection = useCallback((id, offset = 200) => {
+  const scrollToSection = useCallback((id: string, offset: number = 200) => {
     if (typeof window !== 'undefined') {
       const section = document.getElementById(id);
       if (section) {
@@ -214,7 +214,7 @@ export default function Home () {
               <form action="https://formspree.io/f/xovjgagl" method="POST" className='space-y-4'>
                 <input type='text' name='name' placeholder='Your Name' className='w-full p-4 border rounded-xl' required />
                 <input type='email' name='email' placeholder='Your Email' className='w-full p-4 border rounded-xl' required />
-                <textarea name='message' placeholder='Your Message' rows='5' className='w-full p-4 border rounded-xl' required></textarea>
+                <textarea name='message' placeholder='Your Message' rows={5} className='w-full p-4 border rounded-xl' required></textarea>
                 <button type='submit' className='w-full p-4 bg-black text-white rounded-xl text-2xl hover:opacity-80 transition-all duration-300'>Send Message</button>
               </form>
             </div>
