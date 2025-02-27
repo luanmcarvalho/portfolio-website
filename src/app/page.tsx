@@ -171,16 +171,18 @@ export default function home () {
           <div className='flex-1 ml-20'>
             <Img src='/images/HOVER-ColorDARK.png' alt='Logo' width={250} height={250} className=''/>
           </div>
-          <div className='flex-1 justify-center flex-col space-y-2 mr-[80rem]'>
+          <div className='flex-1 justify-center space-y-2'>
             <p className='font-organicaLight'><a href="mailto:hello@hoverstudio.tv" className='hover:underline'>hello@hoverstudio.tv</a></p>
             <p className='font-organicaLight'>(11) 93258-9315</p>
+          </div>
+
+          <div className='flex flex-col space-x-4 mr-20'>
             <p className='font-organicaLight text-1xl'>Av. Gov. José Malcher, 153</p>
             <p className='font-organicaLight text-1xl'>Nazaré, Belém - PA</p>
             <p className='font-organicaLight text-1xl'>66035-100</p>
           </div>
 
-        </div>
-
+          </div>
       </div>
     </>
   );
