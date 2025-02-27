@@ -66,8 +66,10 @@ export default function Home () {
             >
               Development
             </p>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("about")}>About</p>
-            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' onClick={() => scrollToSection("contact")}>Contact</p>
+            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' 
+               onClick={() => isClient && scrollToSection("about")}>About</p>
+            <p className='font-organica text-2xl text-gray-500 hover:text-black cursor-pointer transition-all duration-300 hover:scale-105' 
+               onClick={() => isClient && scrollToSection("contact")}>Contact</p>
           </div>
 
           {/* Redes Sociais */}
@@ -205,7 +207,7 @@ export default function Home () {
           <div className='container mx-auto mt-30 flex'>
             <div className='flex-1 flex-col space-y-4 mr-5'>
             <h2 className='font-organica text-6xl items-center'>Hi!</h2>
-            <p className='font-organicaLight text-2xl'>I&apos;m a Front-End Developer and Motion Designer with a passion for crafting visually stunning, interactive experiences. I bring a unique blend of technical expertise and creativity to every project. My experience spans 7 years, during which I&apos;ve worked alongside talented professionals to bring ideas to life, blending beautiful, functional design with seamless animation.</p>
+            <p className='font-organicaLight text-2xl'>I&apos;m a Front-End Developer and Motion Designer with a passion for crafting visually stunning, interactive experiences. I bring a unique blend of technical expertise and creativity to every project. My experience spans 7 years, during which I've worked alongside talented professionals to bring ideas to life, blending beautiful, functional design with seamless animation.</p>
             <p className='font-organicaLight text-2xl'>From concept to delivery, I aim to captivate audiences and elevate brand messaging with exceptional audiovisual pieces. Utilizing modern technologies such as React, Next.js, and CSS animations to deliver exceptional user experiences.</p>
             <p className='font-organicaLight text-2xl'>When I&apos;m not designing or learning something new, you&apos;ll find me enjoying movies, exploring video games, or spending quality time with wife and my baby daughter, my greatest source of inspiration.</p>
             <p className='font-organicaLight text-2xl'>I also run a boutique animation and tech studio, where I collaborate with top industry professionals to create innovative solutions for your business. Explore our work at <a href="https://www.hoverstudio.tv/" className='underlined'>hoverstudio.tv</a></p>
