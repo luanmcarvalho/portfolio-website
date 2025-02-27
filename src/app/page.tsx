@@ -3,23 +3,26 @@
 import { FaLinkedin, FaVimeo, FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
+import ReactPlayer from 'react-player/lazy';
 
 
 export default function Home () {
   const [filter, setFilter] = useState('All');
   const [showAll, setShowAll] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [videoUrl, setVideoUrl] = useState('https://vimeo.com/1060999864');
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
   const projects = [
-    { id: 1, title: 'BMW | Alexa', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
-    { id: 2, title: 'Pringles | New Visual', category: '3D Animation', img: '/images/wizard-thumb.jpg' },
-    { id: 3, title: 'Cinema Olympia | Requalificação', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
-    { id: 4, title: 'Vale | Stories We Can Avoid', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
-    { id: 5, title: 'Papo de Raiz', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
-    { id: 6, title: 'Vale | Serra Sul', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
-    { id: 7, title: 'Density | Go to Market', category: '2D Animation', img: '/images/wizard-thumb.jpg' },
-    { id: 8, title: 'Parque com Criatividade', category: 'Compositing', img: '/images/wizard-thumb.jpg' },
-    { id: 9, title: 'Skol | Sinuquinha x Snooker', category: 'Compositing', img: '/images/wizard-thumb.jpg' },
+    { id: 1, title: 'BMW | Alexa', category: '2D Animation', img: '/images/wizard-thumb.jpg', videoUrl: 'https://vimeo.com/123456781' },
+    { id: 2, title: 'Pringles | New Visual', category: '3D Animation', img: '/images/wizard-thumb.jpg', videoUrl: 'https://vimeo.com/123456782' },
+    { id: 3, title: 'Cinema Olympia | Requalificação', category: '2D Animation', img: '/images/wizard-thumb.jpg', videoUrl: 'https://vimeo.com/123456783' },
+    { id: 4, title: 'Vale | Stories We Can Avoid', category: '2D Animation', img: '/images/wizard-thumb.jpg', videoUrl: 'https://vimeo.com/123456784' },
+    { id: 5, title: 'Papo de Raiz', category: '2D Animation', img: '/images/wizard-thumb.jpg', videoUrl: 'https://vimeo.com/123456785' },
+    { id: 6, title: 'Vale | Serra Sul', category: '2D Animation', img: '/images/wizard-thumb.jpg', videoUrl: 'https://vimeo.com/123456786' },
+    { id: 7, title: 'Density | Go to Market', category: '2D Animation', img: '/images/wizard-thumb.jpg', videoUrl: 'https://vimeo.com/123456787' },
+    { id: 8, title: 'Parque com Criatividade', category: 'Compositing', img: '/images/wizard-thumb.jpg', videoUrl: 'https://vimeo.com/123456788' },
+    { id: 9, title: 'Skol | Sinuquinha x Snooker', category: 'Compositing', img: '/images/wizard-thumb.jpg', videoUrl: 'https://vimeo.com/123456789' },
   ];
 
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
@@ -40,6 +43,18 @@ export default function Home () {
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    if (showVideoModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [showVideoModal]);
 
   return (
     <>
@@ -88,7 +103,10 @@ export default function Home () {
             <h2 className='text-2xl ml-1 font-organicaLight'>Frontend Developer & Motion Designer</h2>
           </div>
 
-          <div className='flex-1 ml-16 relative group cursor-pointer'>
+          <div className='flex-1 ml-16 relative group cursor-pointer' onClick={() => {
+              setVideoUrl('https://vimeo.com/1060999864');
+              setShowVideoModal(true);
+            }}>
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 z-10 transition-opacity duration-300' />
             <h2 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica'>Wizard&apos;s New Brand</h2>
             <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xl opacity-0 mt-8 group-hover:opacity-100 transition-opacity duration-300 z-10 font-organicaLight'>Featured Project</p>
@@ -129,9 +147,25 @@ export default function Home () {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-20 py-20">
             {displayedProjects.map((project) => (
-              <div key={project.id} className="relative group cursor-pointer w-full">
+              <div 
+                key={project.id} 
+                className="relative group cursor-pointer w-full"
+                onClick={() => {
+                  setVideoUrl(project.videoUrl);
+                  setShowVideoModal(true);
+                }}
+              >
                 <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
                 <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">{project.title}</h2>
+                
+                {/* Add play button icon */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-8 text-white text-xl opacity-0 mt-8 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                
                 <Image src={project.img} alt={project.title} width={800} height={453} className="w-full h-auto shadow-lg" />
               </div>
             ))}
@@ -200,7 +234,7 @@ export default function Home () {
           </div>
 
           <div className='flex-1 w-full lg:w-[800px] mt-36 hidden sm:block'>
-            <Image src="/images/about-image.png" alt='Banner' width={800} height={800} loading="lazy" />
+            <Image src="/images/about-image.png" alt='Banner' width={800} height={800} />
           </div>
         </section>
 
@@ -221,6 +255,42 @@ export default function Home () {
           </div>
         </section>
       </main>
+
+      {/* Video Modal */}
+      {showVideoModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[100] video-modal">
+          <div className="relative w-full max-w-6xl mx-auto px-4 modal-content"> {/* Changed max-w-4xl to max-w-6xl */}
+            <button
+              className="absolute -top-12 right-4 text-white text-4xl focus:outline-none hover:text-gray-300 transition-colors"
+              onClick={() => setShowVideoModal(false)}
+              aria-label="Close video"
+            >
+              &times;
+            </button>
+            <div className="relative pt-[56.25%]"> {/* 16:9 Aspect Ratio */}
+              <ReactPlayer
+                url={videoUrl}
+                playing
+                controls
+                width="100%"
+                height="100%"
+                style={{ position: 'absolute', top: 0, left: 0 }}
+                config={{
+                  vimeo: {
+                    playerOptions: {
+                      responsive: true,
+                      autoplay: true,
+                      byline: false,
+                      portrait: false,
+                      title: false
+                    }
+                  }
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <footer className='bg-footer h-48 mt-28'>
         <div className='flex items-center h-full mx-20'>
