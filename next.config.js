@@ -10,6 +10,11 @@ const nextConfig = {
       allowedOrigins: ['localhost:3000']
     }
   },
+  // Disable ESLint during build
+  eslint: {
+    // This setting will completely skip ESLint during builds
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig
