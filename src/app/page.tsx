@@ -596,9 +596,13 @@ export default function Home () {
                     method="POST" 
                     className='space-y-4'
                     onSubmit={(e) => {
+                      e.preventDefault(); // Add this to prevent the default form submission
                       setFormSubmitting(true);
-                      // You can either let the form submit naturally 
-                      // or use fetch API to handle it programmatically
+                      // Simulate form submission
+                      setTimeout(() => {
+                        setFormSubmitted(true); // Now we're using the state setter
+                        setFormSubmitting(false);
+                      }, 2000);
                     }}
                   >
                     <div>
@@ -715,7 +719,10 @@ export default function Home () {
           <div className='border-t border-gray-200 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center'>
             <p className='text-gray-500 text-sm'>© <span suppressHydrationWarning>{new Date().getFullYear()}</span> Luan Carvalho. All rights reserved.</p>
             <nav className='flex space-x-6 mt-4 md:mt-0'>
-              <a href="#" onClick={(e) => {e.preventDefault(); isClient && scrollToSection("animation")}} className='text-gray-500 hover:text-black text-sm'>Animation</a>
+              <a href="#animation" onClick={(e) => {
+                e.preventDefault(); 
+                if (isClient) scrollToSection("animation");
+              }} className='text-gray-500 hover:text-black text-sm'>Animation</a>
               <a href="#" onClick={(e) => {e.preventDefault(); isClient && scrollToSection("dev")}} className='text-gray-500 hover:text-black text-sm'>Development</a>
               <a href="#" onClick={(e) => {e.preventDefault(); isClient && scrollToSection("about")}} className='text-gray-500 hover:text-black text-sm'>About</a>
               <a href="#" onClick={(e) => {e.preventDefault(); isClient && scrollToSection("contact")}} className='text-gray-500 hover:text-black text-sm'>Contact</a>
