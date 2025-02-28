@@ -227,6 +227,59 @@ export default function Home () {
       </header>
 
       <main>
+        <section className="bg-white relative py-20 md:py-28 overflow-hidden" id="hero">
+          <div className="container-custom relative z-10 flex flex-col md:flex-row items-center">
+            <div className="w-full md:w-1/2 pr-0 md:pr-10 mb-10 md:mb-0">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className="font-organica text-4xl md:text-6xl leading-tight mb-6">
+                  Making digital experiences <br /> come to life
+                </h1>
+                <p className="text-gray-600 text-lg mb-8 max-w-lg">
+                  Frontend development and motion design services for brands and businesses that want to stand out.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <a 
+                    href="#contact" 
+                    onClick={(e) => {e.preventDefault(); isClient && scrollToSection('contact')}}
+                    className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium"
+                  >
+                    Contact me
+                  </a>
+                  <a 
+                    href="#animation" 
+                    onClick={(e) => {e.preventDefault(); isClient && scrollToSection('animation')}}
+                    className="border border-gray-300 px-8 py-3 rounded-lg hover:border-black transition-all font-medium"
+                  >
+                    See my work
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+            
+            {/* Imagem escondida em mobile (menos de md) */}
+            <div className="hidden md:block w-full md:w-1/2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="relative"
+              >
+                <Image 
+                  src="/images/hero-image.jpg" 
+                  alt="Hero image" 
+                  width={600} 
+                  height={400} 
+                  className="rounded-lg shadow-2xl w-full object-cover"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         <section className='container-custom pt-16 pb-10 md:py-24 md:min-h-[90vh] flex flex-col md:flex-row items-center mt-20 md:mt-0'>
           <div className='w-full md:w-1/2 md:pr-12 mb-8 md:mb-0 order-2 md:order-1 z-10'>
             <p className='text-gray-500 font-organica mb-2'>Hi, I'm</p>
