@@ -2,17 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['images.unsplash.com', 'example.com'],
+    domains: ['images.unsplash.com'],
   },
-  // Remove deprecated options and fix serverActions format
   experimental: {
-    // Updated format for serverActions
+    // Use the proper format for server actions
     serverActions: {
-      bodySizeLimit: '2mb'
-    },
-    // Remove appDir option as it's no longer needed
+      allowedOrigins: ['localhost:3000']
+    }
   },
-  // Remove swcMinify as it's now the default
 }
 
 module.exports = nextConfig
