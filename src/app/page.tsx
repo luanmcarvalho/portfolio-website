@@ -366,6 +366,7 @@ export default function Home () {
                 className="group flex items-center space-x-2 font-organica text-xl text-gray-600 hover:text-black transition-colors duration-300"
               >
                 <span>Show Less</span>
+
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform rotate-180 group-hover:-translate-y-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
@@ -567,13 +568,13 @@ export default function Home () {
         <section className='container-custom py-24' id='contact'>
           <div className='max-w-3xl mx-auto mt-44'>
             <h2 className="text-h2 font-organica text-center mb-2">Contact Me</h2>
-            <p className="text-gray-500 text-center max-w-lg mx-auto mb-12">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            <p className="text-gray-500 text-center max-w-lg mx-auto mb-12">I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
             
             <div className='bg-white p-8 md:p-10 rounded-xl shadow-lg border border-gray-100'>
               <div className="flex flex-wrap -mx-3 mb-8">
                 <div className="w-full md:w-1/2 px-3 mb-4">
                   <h3 className='text-xl font-organica mb-2'>Let&apos;s Talk</h3>
-                  <p className='text-gray-600 mb-4'>Fill out the form and I'll get back to you as soon as possible.</p>
+                  <p className='text-gray-600 mb-4'>Fill out the form and I&apos;ll get back to you as soon as possible.</p>
                   
                   <div className="flex items-center mb-3">
                     <svg className="w-5 h-5 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -722,9 +723,9 @@ export default function Home () {
                 e.preventDefault(); 
                 if (isClient) scrollToSection("animation");
               }} className='text-gray-500 hover:text-black text-sm'>Animation</a>
-              <a href="#" onClick={(e) => {e.preventDefault(); isClient && scrollToSection("dev")}} className='text-gray-500 hover:text-black text-sm'>Development</a>
-              <a href="#" onClick={(e) => {e.preventDefault(); isClient && scrollToSection("about")}} className='text-gray-500 hover:text-black text-sm'>About</a>
-              <a href="#" onClick={(e) => {e.preventDefault(); isClient && scrollToSection("contact")}} className='text-gray-500 hover:text-black text-sm'>Contact</a>
+              <a href="#" onClick={(e) => {e.preventDefault(); if (isClient) { scrollToSection("dev"); }}} className='text-gray-500 hover:text-black text-sm'>Development</a>
+              <a href="#" onClick={(e) => {e.preventDefault(); if (isClient) scrollToSection("about");}} className='text-gray-500 hover:text-black text-sm'>About</a>
+              <a href="#" onClick={(e) => {e.preventDefault(); if (isClient) scrollToSection("contact");}} className='text-gray-500 hover:text-black text-sm'>Contact</a>
             </nav>
           </div>
         </div>
