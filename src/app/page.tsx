@@ -229,7 +229,7 @@ export default function Home () {
       <main>
         <section className='container-custom pt-16 pb-10 md:py-24 md:min-h-[90vh] flex flex-col md:flex-row items-center mt-20 md:mt-0'>
           <div className='w-full md:w-1/2 md:pr-12 mb-8 md:mb-0 order-2 md:order-1 z-10'>
-            <p className='text-gray-500 font-organica mb-2'>Hi, I'm</p>
+            <p className='text-gray-500 font-organica mb-2'>Hi, I&apos;m</p>
             <h1 className='text-h1 font-organica mb-4'>Luan Carvalho.</h1>
             <h2 className='text-h3 font-organicaLight max-w-2xl mb-8'>
               Frontend Developer & Motion Designer crafting immersive digital experiences
@@ -259,7 +259,7 @@ export default function Home () {
             >
               <div className='absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition-opacity duration-300 z-10 flex items-center justify-center'>
                 <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-4">
-                  <h3 className='text-h3 font-organica mb-2'>Wizard's New Brand</h3>
+                  <h3 className='text-h3 font-organica mb-2'>Wizard&apos;s New Brand</h3>
                   <p className='text-lg font-organicaLight mb-4'>Featured Animation Project</p>
                   <div className="bg-white text-black rounded-full w-16 h-16 mx-auto flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
@@ -342,7 +342,7 @@ export default function Home () {
                   
                   <div className="bg-white text-black rounded-full w-10 h-10 mr-3 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
                 </div>
@@ -367,7 +367,7 @@ export default function Home () {
               >
                 <span>Show Less</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform rotate-180 group-hover:-translate-y-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293-3.293a1 1 0 01-1.414-1.414l-4 4a1 1 0 01-1.414 0l-4-4z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
             ) : (
@@ -413,10 +413,10 @@ export default function Home () {
             </div>
 
             <div className="relative group cursor-pointer">
-              <a href="https://example2.com" target="_blank" rel="noopener noreferrer" className="block">
-                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
-                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Website 2</h2>
-                <Image src="/images/wizard-thumb.jpg" alt="Website 2" width={800} height={453} className="w-full h-auto shadow-lg" />
+              <a href="https://luanmcarvalho.github.io/airbnb-clone/" target="_blank" rel="noopener noreferrer" className="block">
+                <div className="absolute top-0 left-0 w-full h-[17rem] bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
+                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Airbnb Clone</h2>
+                <Image src="/images/airbnb-clone-2.png" alt="Airbnb Clone" width={800} height={453} className="w-full h-auto shadow-lg" />
               </a>
             </div>
 
@@ -488,7 +488,7 @@ export default function Home () {
                     </li>
                   </ul>
                 </div>
-                
+
                 <div>
                   <h3 className="text-xl font-organica mb-4">Design Skills</h3>
                   <ul className="space-y-2 text-gray-600">
@@ -521,11 +521,11 @@ export default function Home () {
               </div>
 
               <p className="font-organicaLight text-body mb-6">
-                Outside of work, I enjoy exploring movies and video games, constantly finding inspiration 
-                in these media. I'm a proud family person, spending quality time with my wife and baby daughter—
+                Outside of work, I enjoy exploring movies and video games, constantly finding inspiration
+                in these media. I&apos;m a proud family person, spending quality time with my wife and baby daughter—
                 who are my greatest source of motivation.
               </p>
-              
+
               <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
                 <p className="font-organica text-lg">
                   I also run <a href="https://www.hoverstudio.tv/" target="_blank" rel="noopener noreferrer" className="text-black relative hover:text-gray-700 transition-colors inline-block">
