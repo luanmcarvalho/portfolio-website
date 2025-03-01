@@ -151,7 +151,7 @@ export default function Home () {
             <nav className='hidden md:flex items-center space-x-8'>
               {[
                 { label: "Animation", id: "animation" },
-                { label: "Development", id: "dev" },
+                { label: "Software", id: "dev" },
                 { label: "About", id: "about" },
                 { label: "Contact", id: "contact" }
               ].map(item => (
@@ -227,59 +227,6 @@ export default function Home () {
       </header>
 
       <main>
-        <section className="bg-white relative py-20 md:py-28 overflow-hidden" id="hero">
-          <div className="container-custom relative z-10 flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-1/2 pr-0 md:pr-10 mb-10 md:mb-0">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h1 className="font-organica text-4xl md:text-6xl leading-tight mb-6">
-                  Making digital experiences <br /> come to life
-                </h1>
-                <p className="text-gray-600 text-lg mb-8 max-w-lg">
-                  Frontend development and motion design services for brands and businesses that want to stand out.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a 
-                    href="#contact" 
-                    onClick={(e) => {e.preventDefault(); isClient && scrollToSection('contact')}}
-                    className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium"
-                  >
-                    Contact me
-                  </a>
-                  <a 
-                    href="#animation" 
-                    onClick={(e) => {e.preventDefault(); isClient && scrollToSection('animation')}}
-                    className="border border-gray-300 px-8 py-3 rounded-lg hover:border-black transition-all font-medium"
-                  >
-                    See my work
-                  </a>
-                </div>
-              </motion.div>
-            </div>
-            
-            {/* Imagem escondida em mobile (menos de md) */}
-            <div className="hidden md:block w-full md:w-1/2">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="relative"
-              >
-                <Image 
-                  src="/images/hero-image.jpg" 
-                  alt="Hero image" 
-                  width={600} 
-                  height={400} 
-                  className="rounded-lg shadow-2xl w-full object-cover"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         <section className='container-custom pt-16 pb-10 md:py-24 md:min-h-[90vh] flex flex-col md:flex-row items-center mt-20 md:mt-0'>
           <div className='w-full md:w-1/2 md:pr-12 mb-8 md:mb-0 order-2 md:order-1 z-10'>
             <p className='text-gray-500 font-organica mb-2'>Hi, I'm</p>
@@ -303,7 +250,7 @@ export default function Home () {
             </div>
           </div>
           
-          <div className='w-full md:w-1/2 order-1 md:order-2 mb-8 md:mb-0 z-10'>
+          <div className='w-full md:w-1/2 order-1 md:order-2 mb-8 md:mb-0 z-10 mt-40 sm:mt-0'>
             <div className='relative group cursor-pointer shadow-2xl rounded-lg overflow-hidden' 
               onClick={() => {
                 setVideoUrl('https://vimeo.com/1060999864');
@@ -322,7 +269,7 @@ export default function Home () {
                 </div>
               </div>
               <Image 
-                src='/images/wizard-thumb.jpg' 
+                src='/images/wizard-thumb.jpg'
                 alt='Wizard brand redesign project - Featured Animation' 
                 width={800} 
                 height={800} 
@@ -362,7 +309,7 @@ export default function Home () {
             <div className='flex flex-wrap justify-center mt-10 mb-16 gap-4'>
               {allCategories.map((category, index) => (
                 <button
-                  key={`category-${index}-${category}`} // Ensure unique keys
+                  key={`category-${index}-${category}`}
                   className={`text-lg md:text-xl font-organica cursor-pointer transition-all duration-300 px-4 py-1 ${
                     filter === category 
                       ? 'text-white bg-black rounded-full' 
@@ -447,14 +394,14 @@ export default function Home () {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-h2 font-organica text-center mb-2 mt-40">Web Development</h2>
+          <h2 className="text-h2 font-organica text-center mb-2 mt-40">Software</h2>
           <div className="h-1 w-20 bg-black mx-auto mt-4 mb-16"></div>
           
           {/* Rest of your dev section */}
         </motion.section>
 
         <div className="relative mt-10">
-          <h3 className="text-4xl font-organica text-center mb-8">Live Sites</h3>
+          <h3 className="text-4xl font-organica text-center mb-8">Web Development</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
             <div className="relative group cursor-pointer">
@@ -758,7 +705,7 @@ export default function Home () {
                 +55 (11) 93258-9315
               </p>
             </div>
-            
+
             <div>
               <h4 className='font-organica text-xl mb-4'>Location</h4>
               <address className='not-italic text-gray-600'>
@@ -768,7 +715,7 @@ export default function Home () {
               </address>
             </div>
           </div>
-          
+
           <div className='border-t border-gray-200 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center'>
             <p className='text-gray-500 text-sm'>© <span suppressHydrationWarning>{new Date().getFullYear()}</span> Luan Carvalho. All rights reserved.</p>
             <nav className='flex space-x-6 mt-4 md:mt-0'>
