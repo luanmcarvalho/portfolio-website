@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Luan Carvalho | Frontend Developer & Motion Designer",
-  description: "Portfolio of Luan Carvalho, a frontend developer and motion designer with 7+ years of experience creating visually stunning, interactive experiences.",
+  description: "Frontend Developer & Motion Designer creating immersive digital experiences for brands and businesses.",
   keywords: ["frontend developer", "motion designer", "React", "Next.js", "animation", "portfolio", "web development", "UI/UX", "interactive design", "creative developer"],
   creator: "Luan Carvalho",
   authors: [{ name: "Luan Carvalho", url: "https://luanmcarvalho.com" }],
@@ -67,7 +67,22 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
     "format-detection": "telephone=no",
-  }
+  },
+  icons: {
+    icon: [
+      { url: '/images/HoverIcon2.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/HoverIcon2.png' },
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -80,8 +95,7 @@ export default function RootLayout({
       <head>
         <meta name="grammarly-disable-extension" content="true" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" href="/images/HoverIcon2.png" type="image/png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
       </head>
