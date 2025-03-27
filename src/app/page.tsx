@@ -526,25 +526,6 @@ export default function Home () {
                 in these media. I&apos;m a proud family person, spending quality time with my wife and baby daughter—
                 who are my greatest source of motivation.
               </p>
-
-              <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
-                <p className="font-organica text-lg">
-                  I also run <a href="https://www.hoverstudio.tv/" target="_blank" rel="noopener noreferrer" className="text-black relative hover:text-gray-700 transition-colors inline-block">
-                    <span className="after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-black after:bottom-0 after:left-0 hover:after:bg-gray-700">Hover Studio</span>
-                  </a>
-                </p>
-                <a 
-                  href="https://www.hoverstudio.tv/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center text-black hover:text-gray-700 transition-colors"
-                >
-                  <span className="mr-2">Visit Studio</span>
-                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </a>
-              </div>
             </div>
 
             <div className="order-1 lg:order-2 relative">
