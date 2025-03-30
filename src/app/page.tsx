@@ -414,10 +414,10 @@ export default function Home () {
             </div>
 
             <div className="relative group cursor-pointer">
-              <a href="https://luanmcarvalho.github.io/airbnb-clone/" target="_blank" rel="noopener noreferrer" className="block">
+              <a href="https://luanmcarvalho.github.io/fake-chat/" target="_blank" rel="noopener noreferrer" className="block">
                 <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
-                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Airbnb Clone</h2>
-                <Image src="/images/airbnb-clone.png" alt="Airbnb Clone" width={800} height={453} className="w-full h-auto shadow-lg" />
+                <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 font-organica">Fake Chat</h2>
+                <Image src="/images/fakechat.png" alt="Fake Chat" width={800} height={453} className="w-full h-auto shadow-lg" />
               </a>
             </div>
 
