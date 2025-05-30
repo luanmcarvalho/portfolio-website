@@ -170,7 +170,6 @@ export default function Home () {
             <div className='flex items-center space-x-6'>
               <a href="https://www.linkedin.com/in/luanmcarvalho/" target='_blank' rel="noopener noreferrer" aria-label="LinkedIn Profile" className='text-gray-600 text-xl hover:text-black transition-all duration-300'><FaLinkedin /></a>
               <a href="https://vimeo.com/hoverstudio" target='_blank' rel="noopener noreferrer" aria-label="Vimeo Profile" className='text-gray-600 text-xl hover:text-black transition-all duration-300'><FaVimeo /></a>
-              <a href="https://github.com/luanmcarvalho" target='_blank' rel="noopener noreferrer" aria-label="GitHub Profile" className='text-gray-600 text-xl hover:text-black transition-all duration-300'><FaGithub /></a>
               <a href="https://instagram.com/hoverstudio.tv" target='_blank' rel="noopener noreferrer" aria-label="Instagram Profile" className='text-gray-600 text-xl hover:text-black transition-all duration-300'><FaInstagram /></a>
             </div>
 
@@ -232,7 +231,7 @@ export default function Home () {
             <p className='text-gray-500 font-organica mb-2'>Hi, I&apos;m</p>
             <h1 className='text-h1 font-organica mb-4'>Luan Carvalho.</h1>
             <h2 className='text-h3 font-organicaLight max-w-2xl mb-8'>
-              Frontend Developer & Motion Designer crafting immersive digital experiences
+              Motion Designer creating captivating animations and visual stories that engage and inspire.
             </h2>
             <div className="flex space-x-4">
               <button 
@@ -449,14 +448,11 @@ export default function Home () {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <p className="font-organicaLight text-body mb-6">
-                I&apos;m a <span className="font-organica">Frontend Developer</span> and <span className="font-organica">Motion Designer</span> with 
-                a passion for crafting visually stunning, interactive experiences. 
+                I&apos;m a <span className="font-organica">Motion Designer</span> with a passion for crafting visually stunning and emotionally engaging animations.
               </p>
               
               <p className="font-organicaLight text-body mb-6">
-                My approach combines technical expertise with creative vision, allowing me to build 
-                digital solutions that are both beautiful and functional. With over 7 years of experience, 
-                I&apos;ve collaborated with talented teams to transform concepts into engaging reality.
+                My approach blends creative vision with technical precision, allowing me to bring ideas to life through dynamic visual storytelling. With over 7 years of experience, I&apos;ve collaborated with talented teams to transform concepts into captivating motion pieces that connect and inspire.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-8">
