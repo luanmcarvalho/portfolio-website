@@ -170,7 +170,7 @@ export default function Home () {
             <div className='flex items-center space-x-6'>
               <a href="https://www.linkedin.com/in/luanmcarvalho/" target='_blank' rel="noopener noreferrer" aria-label="LinkedIn Profile" className='text-gray-600 text-xl hover:text-black transition-all duration-300'><FaLinkedin /></a>
               <a href="https://vimeo.com/hoverstudio" target='_blank' rel="noopener noreferrer" aria-label="Vimeo Profile" className='text-gray-600 text-xl hover:text-black transition-all duration-300'><FaVimeo /></a>
-              <a href="https://instagram.com/hoverstudio.tv" target='_blank' rel="noopener noreferrer" aria-label="Instagram Profile" className='text-gray-600 text-xl hover:text-black transition-all duration-300'><FaInstagram /></a>
+              <a href="https://instagram.com/hover.motion" target='_blank' rel="noopener noreferrer" aria-label="Instagram Profile" className='text-gray-600 text-xl hover:text-black transition-all duration-300'><FaInstagram /></a>
             </div>
 
             <div className="md:hidden">
@@ -531,7 +531,7 @@ export default function Home () {
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
                 <Image 
                   src="/images/about-image.png" 
-                  alt='Luan Carvalho - Frontend Developer and Motion Designer' 
+                  alt='Luan Carvalho - Motion Designer' 
                   width={600} 
                   height={600}
                   className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
@@ -658,12 +658,12 @@ export default function Home () {
           <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
             <div>
               <h4 className='font-organica text-xl mb-4'>Luan Carvalho</h4>
-              <p className='text-gray-600 mb-6 max-w-sm'>Frontend Developer & Motion Designer creating immersive digital experiences for brands and businesses.</p>
+              <p className='text-gray-600 mb-6 max-w-sm'>Motion Designer creating immersive digital experiences for brands and businesses.</p>
               <div className='flex space-x-4'>
                 <a href="https://www.linkedin.com/in/luanmcarvalho/" target='_blank' rel="noopener noreferrer" aria-label="LinkedIn Profile" className='bg-gray-100 hover:bg-black hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300'><FaLinkedin /></a>
                 <a href="https://vimeo.com/hoverstudio" target='_blank' rel="noopener noreferrer" aria-label="Vimeo Profile" className='bg-gray-100 hover:bg-black hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300'><FaVimeo /></a>
                 <a href="https://github.com/luanmcarvalho" target='_blank' rel="noopener noreferrer" aria-label="GitHub Profile" className='bg-gray-100 hover:bg-black hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300'><FaGithub /></a>
-                <a href="https://instagram.com/hoverstudio.tv" target='_blank' rel="noopener noreferrer" aria-label="Instagram Profile" className='bg-gray-100 hover:bg-black hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300'><FaInstagram /></a>
+                <a href="https://instagram.com/hover.motion" target='_blank' rel="noopener noreferrer" aria-label="Instagram Profile" className='bg-gray-100 hover:bg-black hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300'><FaInstagram /></a>
               </div>
             </div>
             
